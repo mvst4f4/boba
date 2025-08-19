@@ -1,0 +1,121 @@
+<!-- added a comment because i can ;) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mustafa alvi - wasgud</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  overflow-x: hidden;
+  background: #000;
+}
+
+.hero-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: #fff;
+  opacity: 0;
+  filter: blur(15px);
+  animation: appearBlur 2s forwards;
+  text-align: center;
+}
+
+@keyframes appearBlur {
+  0% {opacity:0; filter:blur(15px);}
+  70% {opacity:1; filter:blur(5px);}
+  100% {opacity:1; filter:blur(0);}
+}
+
+.site-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background: #000;
+}
+
+.intro {
+  max-width: 600px;
+  text-align: center;
+  background: #111;
+  padding: 25px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+h1, h2, p {
+  color: #fff;
+}
+
+h1 {font-size: 2rem; margin-bottom: 20px;}
+h2 {font-size: 1.2rem; font-weight: normal; margin-bottom: 20px;}
+p {font-size: 1rem; line-height: 1.5; margin-bottom: 20px;}
+
+.cat-section {text-align: center; margin-top: 40px;}
+.cat-section img {
+  width: 600px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.cat-caption {margin-top:10px; font-size:0.95rem; color:#fff;}
+footer {margin-top:50px; font-size:0.85rem; color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="hero-screen">
+  <div class="hero-text">hi there.</div>
+</div>
+
+<div class="site-content">
+  <div class="intro">
+    <h1>my names mustafa alvi (aka heisenburger)</h1>
+    <h2>i study at apsis lahore, o3 (will go into A levels soon)</h2>
+    <p>code is my life, i love coding, i also like watching netflix and looking at views of nature, and especially love boba ;)</p>
+  </div>
+
+  <div class="cat-section">
+    <p class="cat-caption">thanks for visiting my site! before you leave, here's a cute picture of a cat :D</p>
+    <img id="cat-image" src="" alt="cute random cat">
+    <p class="cat-caption" style="font-style: italic;">P.S. it changes everytime you reload</p>
+  </div>
+
+  <footer>made with ❤️ by mustafa</footer>
+</div>
+
+<script>
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.scrollTo(0, 0);
+
+const catImages = [
+  'https://placecats.com/600/400?fit=cover&position=center',
+  'https://placecats.com/600/400?fit=cover&position=top',
+  'https://placecats.com/600/400?fit=cover&position=bottom',
+  'https://placecats.com/neo/600/400',
+  'https://placecats.com/millie/600/400',
+  'https://placecats.com/bella/600/400'
+];
+
+const catImg = document.getElementById('cat-image');
+const randomIndex = Math.floor(Math.random() * catImages.length);
+catImg.src = catImages[randomIndex];
+</script>
+
+</body>
+</html>
